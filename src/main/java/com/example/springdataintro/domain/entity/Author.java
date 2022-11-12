@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 
 @Getter
@@ -25,6 +22,8 @@ public class Author extends BaseEntity {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @OneToMany
+    @OneToMany(targetEntity = Book.class,
+            mappedBy = "author",
+            fetch = FetchType.EAGER)
     private Set<Book> books;
 }
