@@ -39,4 +39,7 @@ public class Book extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private AgeRestriction ageRestriction;
 
+    @ManyToOne
+    private Author author;
+
 }
