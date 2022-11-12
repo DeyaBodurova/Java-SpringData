@@ -22,6 +22,4 @@ public class Category extends BaseEntity {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany
-    private Set<Book> books;
 }
