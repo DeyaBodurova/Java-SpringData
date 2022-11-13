@@ -2,10 +2,7 @@ package com.example.springdataintro.domain.entity;
 
 import com.example.springdataintro.domain.enums.AgeRestriction;
 import com.example.springdataintro.domain.enums.EditionType;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,6 +10,7 @@ import java.util.Set;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
