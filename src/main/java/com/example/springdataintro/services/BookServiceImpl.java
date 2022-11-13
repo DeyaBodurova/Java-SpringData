@@ -17,6 +17,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public boolean isDataSeeded() {
+        return this.bookRepository.count() > 0;
+    }
+
+    @Override
     public void seedBooks(List<Book> books) {
         this.bookRepository.saveAll(books);
     }
