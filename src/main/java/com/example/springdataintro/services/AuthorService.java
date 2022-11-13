@@ -5,9 +5,9 @@ import com.example.springdataintro.domain.entity.Author;
 import java.util.List;
 
 public interface AuthorService {
-void seedAuthors(List<Author> authors);
+    void seedAuthors(List<Author> authors);
 
-boolean isDataSeeded();
+    boolean isDataSeeded();
 
-Author getRandomAuthor();
+    Author getRandomAuthor();
 }
