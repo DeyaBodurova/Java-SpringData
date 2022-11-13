@@ -83,8 +83,7 @@ public class SeedServiceImpl implements SeedService {
                     .map(name -> Category.builder()
                             .name(name)
                             .build())
-                    .collect(Collectors.toList());
-            );
+                    .collect(Collectors.toList()));
         }
     }
 }
