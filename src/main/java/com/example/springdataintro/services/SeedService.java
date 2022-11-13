@@ -7,7 +7,7 @@ public interface SeedService {
 
     void seedBooks() throws IOException;
 
-    void seedCategories();
+    void seedCategories() throws IOException;
 
     default void seedAllData() throws IOException {
         seedAuthors();

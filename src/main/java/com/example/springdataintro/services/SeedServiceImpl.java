@@ -2,6 +2,7 @@ package com.example.springdataintro.services;
 
 import com.example.springdataintro.domain.entity.Author;
 import com.example.springdataintro.domain.entity.Book;
+import com.example.springdataintro.domain.entity.Category;
 import com.example.springdataintro.domain.enums.AgeRestriction;
 import com.example.springdataintro.domain.enums.EditionType;
 import org.springframework.stereotype.Component;
@@ -73,7 +74,17 @@ public class SeedServiceImpl implements SeedService {
     }
 
     @Override
-    public void seedCategories() {
-
+    public void seedCategories() throws IOException {
+        if(!this.categoryService.isDataSeeded()){
+            this.categoryService.seedCategory(Files
+                    .readAllLines(Path.of(RESOURCE_URL + CATEGORIES_FILE_NAME))
+                    .stream()
+                    .filter(s->!s.isBlank())
+                    .map(name -> Category.builder()
+                            .name(name)
+                            .build())
+                    .collect(Collectors.toList());
+            );
+        }
     }
 }
